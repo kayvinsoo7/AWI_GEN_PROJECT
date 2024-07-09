@@ -51,7 +51,7 @@ parameter_frame.pack(pady=10)
 parameter_label = ttk.Label(parameter_frame, text="Parameter:")
 parameter_label.pack(side=tk.LEFT, padx=(0, 10))
 
-parameters = ["Parameter 1", "Parameter 2", "Parameter 3"]  # Update with your parameters
+parameters = ["Age", "Sex", "BMI", "Alcohol", "Smoker"]  # Update with your parameters
 parameter_combobox = ttk.Combobox(parameter_frame, values=parameters, state="readonly")
 parameter_combobox.pack(side=tk.LEFT)
 
