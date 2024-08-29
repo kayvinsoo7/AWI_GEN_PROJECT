@@ -21,27 +21,27 @@ class MultiMorbidityRiskApp:
         button_frame = ctk.CTkFrame(self.root, corner_radius=10)
         button_frame.grid(row=0, column=0, padx=10, pady=10, sticky="n")
 
-        patient_btn = ctk.CTkButton(button_frame, text="Patient", command=self.load_patient)
+        patient_btn = ctk.CTkButton(button_frame, text="Patient", command=self.load_patient, fg_color="#1E90FF")
         patient_btn.grid(row=0, column=0, padx=5, pady=5, sticky="ew")
 
-        load_btn = ctk.CTkButton(button_frame, text="Load", command=self.load_patient)
+        load_btn = ctk.CTkButton(button_frame, text="Load", command=self.load_patient, fg_color="#00BFFF")
         load_btn.grid(row=1, column=0, padx=5, pady=5, sticky="ew")
 
-        model_btn = ctk.CTkButton(button_frame, text="Trained Model", command=self.load_model)
+        model_btn = ctk.CTkButton(button_frame, text="Trained Model", command=self.load_model, fg_color="#1E90FF")
         model_btn.grid(row=2, column=0, padx=5, pady=5, sticky="ew")
 
-        predict_btn = ctk.CTkButton(button_frame, text="Predict", command=self.predict)
+        predict_btn = ctk.CTkButton(button_frame, text="Predict", command=self.predict, fg_color="#00BFFF")
         predict_btn.grid(row=3, column=0, padx=5, pady=5, sticky="ew")
 
-        display_btn = ctk.CTkButton(button_frame, text="Display", command=self.toggle_display)
+        display_btn = ctk.CTkButton(button_frame, text="Display", command=self.toggle_display, fg_color="#1E90FF")
         display_btn.grid(row=4, column=0, padx=5, pady=5, sticky="ew")
 
-        close_btn = ctk.CTkButton(button_frame, text="Close", command=self.root.quit)
+        close_btn = ctk.CTkButton(button_frame, text="Close", command=self.root.quit, fg_color="#00BFFF")
         close_btn.grid(row=5, column=0, padx=5, pady=5, sticky="ew")
 
         # Top section for input method selection
         top_frame = ctk.CTkFrame(self.root, corner_radius=10)
-        top_frame.grid(row=0, column=1, padx=10, pady=10, sticky="ew")
+        top_frame.grid(row=0, column=1, padx=10, pady=5, sticky="ew")
 
         input_method_label = ctk.CTkLabel(top_frame, text="Select Input Method:")
         input_method_label.grid(row=0, column=0, padx=5, pady=5, sticky="w")
@@ -54,10 +54,10 @@ class MultiMorbidityRiskApp:
 
         # Main section
         main_frame = ctk.CTkFrame(self.root, corner_radius=10)
-        main_frame.grid(row=1, column=1, padx=10, pady=10, sticky="nsew")
+        main_frame.grid(row=1, column=1, padx=10, pady=5, sticky="nsew")
 
         # Model Section
-        model_frame = ctk.CTkFrame(main_frame, corner_radius=10)
+        model_frame = ctk.CTkFrame(main_frame, corner_radius=10, fg_color="#87CEEB")
         model_frame.grid(row=0, column=0, padx=10, pady=5, sticky="ew")
 
         model_label = ctk.CTkLabel(model_frame, text="Select Model:")
@@ -68,7 +68,7 @@ class MultiMorbidityRiskApp:
         model_combobox.grid(row=0, column=1, padx=5, pady=5)
 
         # Variable Section
-        variable_frame = ctk.CTkFrame(main_frame, corner_radius=10)
+        variable_frame = ctk.CTkFrame(main_frame, corner_radius=10, fg_color="#FFA07A")
         variable_frame.grid(row=1, column=0, padx=10, pady=5, sticky="ew")
 
         self.var_file_label = ctk.CTkLabel(variable_frame, text="Input Data File:")
@@ -81,7 +81,7 @@ class MultiMorbidityRiskApp:
         browse_var_btn.grid(row=1, column=2, padx=5, pady=5)
 
         # Input Variable Values Section
-        self.input_frame = ctk.CTkFrame(main_frame, corner_radius=10)
+        self.input_frame = ctk.CTkFrame(main_frame, corner_radius=10, fg_color="#FFA07A")
         self.input_frame.grid(row=2, column=0, padx=10, pady=5, sticky="ew")
 
         input_label = ctk.CTkLabel(self.input_frame, text="Variable Values:")
@@ -103,7 +103,7 @@ class MultiMorbidityRiskApp:
             self.var_value_dict[var] = var_value
 
         # Prediction Section
-        predict_frame = ctk.CTkFrame(main_frame, corner_radius=10)
+        predict_frame = ctk.CTkFrame(main_frame, corner_radius=10, fg_color="#87CEEB")
         predict_frame.grid(row=3, column=0, padx=10, pady=5, sticky="ew")
 
         self.predicted_class_label = ctk.CTkLabel(predict_frame, text="Predicted Class:")
@@ -116,7 +116,7 @@ class MultiMorbidityRiskApp:
         self.risk_type_label.grid(row=3, column=0, padx=10, pady=5, sticky="w")
 
         # Feature Contribution Section
-        feature_frame = ctk.CTkFrame(main_frame, corner_radius=10)
+        feature_frame = ctk.CTkFrame(main_frame, corner_radius=10, fg_color="#87CEEB")
         feature_frame.grid(row=4, column=0, padx=10, pady=5, sticky="ew")
 
         self.feature1_label = ctk.CTkLabel(feature_frame, text="1. Feature 1")
